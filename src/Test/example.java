@@ -1,7 +1,7 @@
 package Test;
 
 public class example {
-    class BankAccount {
+    static class BankAccount {
         private double balance; //data is encapsulated
         private String accountNumber;
 
@@ -18,7 +18,7 @@ public class example {
         }
     }
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
         BankAccount myAccount = new BankAccount();
         myAccount.deposit(1000);
         myAccount.withdraw(500);
