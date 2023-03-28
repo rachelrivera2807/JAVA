@@ -1,22 +1,27 @@
 package Test;
 public class JavaThisKeyword {
-
-    static class Account{
-        int a;
-        int b;
-
-        public void setData(int a ,int b){
-            this.a = a;
-            this.b = b;
+        private int a, b;
+        private JavaThisKeyword( int i, int j ){
+            this.a = i;
+            this.b = j;
         }
-        public void showData(){
-            System.out.println("Value of A ="+a);
-            System.out.println("Value of B ="+b);
+        private JavaThisKeyword(int i){
+            this(i, i);
         }
-        public void main(String args[]){
-            Account obj = new Account();
-            obj.setData(2,3);
-            obj.showData();
+        private JavaThisKeyword(){
+            this(0);
+        }
+        @Override
+        public String toString(){
+            return this.a + " + " + this.b + "i";
+        }
+        public static void main( String[] args ) {
+            JavaThisKeyword c1 = new JavaThisKeyword(2, 3);
+            JavaThisKeyword c2 = new JavaThisKeyword(3);
+            JavaThisKeyword c3 = new JavaThisKeyword();
+
+            System.out.println(c1);
+            System.out.println(c2);
+            System.out.println(c3);
         }
     }
-}
